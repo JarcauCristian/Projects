@@ -1,13 +1,27 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Settings {
-    public static String STUDENTS_PATH = "studenti.csv";
-    public static String TEACHERS_PATH = "profesori.csv";
-    public static String COURSES_PATH= "cursuri.csv";
-    public static LOAD_TYPE loadType = LOAD_TYPE.FILE;
-    public static DISPLAY_TYPE displayType = DISPLAY_TYPE.CONSOLA;
+    public static String STUDENTS_PATH = "studenti.xml";
+    public static String TEACHERS_PATH = "profesori.xml";
+    public static String COURSES_PATH= "cursuri.xml";
+    public static LOAD_TYPE loadType = LOAD_TYPE.HARDCODAT;
+    public static DISPLAY_TYPE displayType = DISPLAY_TYPE.FISIER;
+
+    public static HashMap<LOAD_TYPE, IDataLoader> dataloader = new HashMap<>() {{
+        put(LOAD_TYPE.HARDCODAT, new HardcodatDataManager());
+        put(LOAD_TYPE.FILE, new FileDataManager());
+        put(LOAD_TYPE.KEYBOARD, new KeyboardDataManager());
+    }};
+
+    public static HashMap<DISPLAY_TYPE, IDisplayManager> displayloader = new HashMap<DISPLAY_TYPE, IDisplayManager>() {{
+        put(DISPLAY_TYPE.CONSOLA,new ConsoleDisplay());
+        put(DISPLAY_TYPE.FISIER,new FileDisplay());
+        put(DISPLAY_TYPE.GUI,new GraphicUserInterfaceDisplay());
+    }};
 
     public static void initApplication() {
         try(Scanner cin = new Scanner(new File("settings.txt")))

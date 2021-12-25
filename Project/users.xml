@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="17" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="User" id="User0">
+    <void class="User" method="getField">
+     <string>userName</string>
+     <void method="set">
+      <object idref="User0"/>
+      <string>ScR4PP</string>
+     </void>
+    </void>
+    <void class="User" method="getField">
+     <string>password</string>
+     <void method="set">
+      <object idref="User0"/>
+      <string>9aea9b0e20ee71bc24b9a1eca3403372a18e1b7e385f84fc8e8f45544cfa122d</string>
+     </void>
+    </void>
+    <void class="User" method="getField">
+     <string>menuStrategy</string>
+     <void method="set">
+      <object idref="User0"/>
+      <object class="TeacherStrategy" id="TeacherStrategy0">
+       <void class="TeacherStrategy" method="getField">
+        <string>profesor</string>
+        <void method="set">
+         <object idref="TeacherStrategy0"/>
+         <object class="Profesor" id="Profesor0">
+          <void class="Profesor" method="getField">
+           <string>nume</string>
+           <void method="set">
+            <object idref="Profesor0"/>
+            <string>JARCAU</string>
+           </void>
+          </void>
+          <void class="Profesor" method="getField">
+           <string>prenume</string>
+           <void method="set">
+            <object idref="Profesor0"/>
+            <string>STEFAN</string>
+           </void>
+          </void>
+         </object>
+        </void>
+       </void>
+      </object>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="User" id="User1">
+    <void class="User" method="getField">
+     <string>userName</string>
+     <void method="set">
+      <object idref="User1"/>
+      <string>Lol</string>
+     </void>
+    </void>
+    <void class="User" method="getField">
+     <string>password</string>
+     <void method="set">
+      <object idref="User1"/>
+      <string>6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918</string>
+     </void>
+    </void>
+    <void class="User" method="getField">
+     <string>menuStrategy</string>
+     <void method="set">
+      <object idref="User1"/>
+      <object class="StudentStrategy" id="StudentStrategy0">
+       <void class="StudentStrategy" method="getField">
+        <string>student</string>
+        <void method="set">
+         <object idref="StudentStrategy0"/>
+         <object class="Student" id="Student0">
+          <void class="Student" method="getField">
+           <string>nume</string>
+           <void method="set">
+            <object idref="Student0"/>
+            <string>Silitra</string>
+           </void>
+          </void>
+          <void class="Student" method="getField">
+           <string>prenume</string>
+           <void method="set">
+            <object idref="Student0"/>
+            <string>Florin</string>
+           </void>
+          </void>
+          <void class="Student" method="getField">
+           <string>grupa</string>
+           <void method="set">
+            <object idref="Student0"/>
+            <int>1</int>
+           </void>
+          </void>
+         </object>
+        </void>
+       </void>
+      </object>
+     </void>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

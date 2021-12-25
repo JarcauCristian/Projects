@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PushbackInputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Objects;
@@ -8,8 +9,10 @@ import java.util.Scanner;
 
 public class Profesor {
 
-    private String nume;
-    private String prenume;
+    public String nume;
+    public String prenume;
+
+    public Profesor() { }
 
     public Profesor(String[] splituri)
     {
@@ -40,10 +43,7 @@ public class Profesor {
 
     @Override
     public String toString() {
-        return "Profesor{" +
-                "nume='" + nume + '\'' +
-                ", prenume='" + prenume + '\'' +
-                '}';
+        return this.nume + "," + this.prenume;
     }
 
     @Override

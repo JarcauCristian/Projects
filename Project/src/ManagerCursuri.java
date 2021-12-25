@@ -1,9 +1,11 @@
+import javax.swing.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class ManagerCursuri{
     private ArrayList<Curs> cursuri;
 
-    private Curs search(Curs unCurs) throws Exception {
+    public Curs search(Curs unCurs) throws Exception {
         int i = cursuri.indexOf(unCurs);
         if ( i != -1 ) {
             return cursuri.get(i);
@@ -17,9 +19,75 @@ public class ManagerCursuri{
         return this.cursuri;
     }
 
+    public Curs[] getCursuriArray() {
+        Curs[] c = new Curs[cursuri.size()];
+        c = cursuri.toArray(c);
+        return c;
+    }
+
+
+    public String getStudentYear(Student student)
+    {
+        for(Curs curs : cursuri)
+        {
+            if(curs.SearchStudent(student))
+            {
+                Student[] students = curs.studenti.toArray(new Student[curs.studenti.size()]);
+                ArrayList<Student> s = new ArrayList<>(Arrays.asList(students));
+                String year = s.get(s.indexOf(student)).an.toString();
+                return year;
+            }
+        }
+        return null;
+    }
+
+    public String[] SerchStudentInCours(Student student)
+    {
+        String[] line = new String[cursuri.size()];
+        for (Curs c : cursuri)
+        {
+            if(c.SearchStudent(student))
+            {
+                String restanta = null;
+                if(c.note.get(student) == null)
+                {
+                    restanta = "";
+                }
+                else
+                    if (c.note.get(student) == 0)
+                    {
+                        restanta = c.note.get(student).toString();
+                    }
+                    else
+                        if(c.note.get(student) < 5)
+                        {
+                            restanta = c.note.get(student).toString() + " Restanta";
+                        }
+                        else
+                            if(c.note.get(student) >= 5)
+                            {
+                                restanta = c.note.get(student).toString();
+                            }
+                line[cursuri.indexOf(c)] = c.nume + ": " + restanta;
+            }
+        }
+        return line;
+    }
+
     //Constructor
-    public ManagerCursuri() {
-        this.cursuri = new ArrayList<>();
+    public ManagerCursuri(ArrayList<Curs> cursuri) {
+        this.cursuri = cursuri;
+    }
+
+    public ManagerCursuri() { }
+
+    public ManagerCursuri(Curs[] c)
+    {
+       this.cursuri = new ArrayList<>(Arrays.asList(c));
+    }
+    public void setCurs(Curs[] c)
+    {
+        this.cursuri = new ArrayList<>(Arrays.asList(c));
     }
 
     //Functie de adaugare curs
@@ -72,6 +140,24 @@ public class ManagerCursuri{
         {
             System.out.println("Cursul nu a fost gasit!");
         }
+    }
+
+    public float MediaStudent(Student student)
+    {
+        float mean = 0;
+        int nr = 0;
+        for(Curs curs : cursuri)
+        {
+            if(curs.SearchStudent(student))
+            {
+                mean += curs.note.get(student) != null ? curs.note.get(student) : 0;
+                nr++;
+            }
+        }
+        if(mean == 0)
+            return 0;
+        else
+            return mean/nr;
     }
 
     public void EditCurs(Curs c, Curs cursNou) throws Exception {

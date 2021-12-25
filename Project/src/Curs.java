@@ -1,18 +1,34 @@
 import java.util.*;
 
 public class Curs{
-    private String nume;
-    private String descriere;
-    private Profesor prof;
-    private Set<Student> studenti = new HashSet<Student>();
-    private HashMap<Student, Integer> note = new HashMap<Student, Integer>();
+    public String nume;
+    public String descriere;
+    public Profesor prof;
+    public Set<Student> studenti = new HashSet<Student>();
+    public HashMap<Student, Integer> note = new HashMap<Student, Integer>();
+    public int an;
+
+    public Curs() { }
+    public Curs(String nume) {
+        this.nume = nume;
+    }
 
     //Consctructor Curs
-    public Curs(String nume, String descriere, Profesor profu, Set<Student> studenti) {
+    public Curs(String nume, String descriere, Profesor profu, Set<Student> studenti, HashMap<Student, Integer> note, int an) {
         this.nume = nume;
         this.descriere = descriere;
         this.prof = profu;
         this.studenti = studenti;
+        this.note = note;
+        this.an = an;
+    }
+
+    public Curs(String nume, String descriere, Profesor profu, Set<Student> studenti, int an) {
+        this.nume = nume;
+        this.descriere = descriere;
+        this.prof = profu;
+        this.studenti = studenti;
+        this.an = an;
     }
 
     public Curs(String[] splituri, Profesor prof, Set<Student> studenti)
@@ -21,6 +37,18 @@ public class Curs{
         this.descriere = splituri[1];
         this.prof = prof;
         this.studenti = studenti;
+    }
+
+    public boolean SearchStudent(Student student)
+    {
+        for(Student s : studenti)
+        {
+            if(s.equals(student))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public float mediaStudenti()
@@ -45,13 +73,6 @@ public class Curs{
         for (Student s : this.studenti) {
             System.out.println("Studentul: " + s.getNume() + " " + s.getPrenume() + " are nota: " + this.note.get(s));
         }
-    }
-
-    //Functie adaugare student
-    public void AddStudent() {
-        Student student = new Student("","", 0);
-        student.CitireDateStudent();
-        this.studenti.add(student);
     }
 
     //Functie de stergere a unui student
@@ -187,9 +208,14 @@ public class Curs{
         return Objects.equals(nume, curs.nume);
     }
 
+    public String PrintDataFromatForFile()
+    {
+        return this.nume + "," + this.descriere;
+    }
+
     public void noteazaStudent(Student s, int notaStudentului) throws Exception {
-        if ( this.studenti.contains(s)) {
-            this.note.put(s, notaStudentului);
+        if ( studenti.contains(s)) {
+            note.put(s, notaStudentului);
         } else {
             throw new Exception("Studentul " + s + " nu poate fi notat pentru ca nu participa la curs");
         }

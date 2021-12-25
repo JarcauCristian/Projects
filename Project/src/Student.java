@@ -6,15 +6,31 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Student {
-    private String nume;
-    private String prenume;
-    private int grupa;
+    public String nume;
+    public String prenume;
+    public int grupa;
+    public Integer an;
 
-    //Constructor Student
+    public Student() { }
+
+    public Student(String nume, String prenume)
+    {
+        this.nume = nume;
+        this.prenume = prenume;
+    }
+
     public Student(String nume, String prenume, int grupa) {
         this.nume = nume;
         this.prenume = prenume;
         this.grupa = grupa;
+    }
+
+    //Constructor Student
+    public Student(String nume, String prenume, int grupa, Integer an) {
+        this.nume = nume;
+        this.prenume = prenume;
+        this.grupa = grupa;
+        this.an = an;
     }
 
     public Student(String[] splituri)
@@ -22,40 +38,6 @@ public class Student {
         this.nume = splituri[0];
         this.prenume = splituri[1];
         this.grupa = Integer.parseInt(splituri[2]);
-    }
-
-    public void CitireDateStudent()
-    {
-
-        String nume = "";
-        String prenume = "";
-        int grupa = 0;
-        Scanner cin = new Scanner(System.in);
-        boolean continueInput = true;
-
-        do {
-            try {
-                System.out.print("Introduceti numele studentului: ");
-
-                nume = cin.nextLine();
-
-                System.out.print("Introduceti prenumele studentului: ");
-
-                prenume = cin.nextLine();
-
-                System.out.print("Introduceti grupa studentului: ");
-
-                grupa = cin.nextInt();
-                continueInput = false;
-            } catch (InputMismatchException ex) {
-                System.out.println(ex + " Try again!");
-                cin.nextLine();
-            }
-        }while(continueInput);
-
-        this.nume = nume;
-        this.prenume = prenume;
-        this.grupa = grupa;
     }
 
     public String getNume() {
@@ -72,7 +54,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Grupa: " + this.grupa + " Studentul: " + this.nume + " " + this.prenume;
+        return this.nume + "," + this.prenume + "," + this.grupa;
     }
 
     //Funtie de comparare studenti dupa nume
@@ -114,11 +96,11 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return grupa == student.grupa && Objects.equals(nume, student.nume) && Objects.equals(prenume, student.prenume);
+        return Objects.equals(nume, student.nume) && Objects.equals(prenume, student.prenume);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nume, prenume, grupa);
+        return Objects.hash(nume, prenume);
     }
 }
