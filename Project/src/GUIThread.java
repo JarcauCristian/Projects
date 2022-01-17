@@ -13,6 +13,6 @@ public class GUIThread implements Runnable {
         frame.setContentPane(new FirstPageGUI(frame,students,teachers).getMainPanel());
         frame.setVisible(true);
         frame.setSize(400,400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 }

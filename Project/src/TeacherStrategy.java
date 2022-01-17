@@ -72,6 +72,10 @@ public class TeacherStrategy implements MenuStrategy {
             }
             while (t != list.size() + 1);
             Application.getInstance().displayManager.displayCourses(Application.getInstance().manager.getCursuriArray());
+            if(t == list.size() + 1)
+            {
+                System.out.println("\nProcess finished with exit code 0");
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

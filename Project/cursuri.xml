@@ -313,167 +313,181 @@
     <string>prenume</string>
     <void method="set">
      <object idref="Student0"/>
-     <string>Marian</string>
+     <string>Stefan</string>
     </void>
    </void>
    <void class="Student" method="getField">
     <string>grupa</string>
     <void method="set">
      <object idref="Student0"/>
-     <int>2</int>
-    </void>
-   </void>
-   <void class="Student" method="getField">
-    <string>an</string>
-    <void method="set">
-     <object idref="Student0"/>
-     <int>4</int>
-    </void>
-   </void>
-  </object>
-  <string>Visan</string>
- </void>
-</void>
-<void class="Student" method="getField">
- <string>nume</string>
- <void method="set">
-  <object class="Student" id="Student1">
-   <void class="Student" method="getField">
-    <string>prenume</string>
-    <void method="set">
-     <object idref="Student1"/>
-     <string>Bianca</string>
-    </void>
-   </void>
-   <void class="Student" method="getField">
-    <string>grupa</string>
-    <void method="set">
-     <object idref="Student1"/>
      <int>1</int>
     </void>
    </void>
    <void class="Student" method="getField">
     <string>an</string>
     <void method="set">
-     <object idref="Student1"/>
-     <int>4</int>
-    </void>
-   </void>
-  </object>
-  <string>Iorga</string>
- </void>
-</void>
-<void class="Student" method="getField">
- <string>nume</string>
- <void method="set">
-  <object class="Student" id="Student2">
-   <void class="Student" method="getField">
-    <string>prenume</string>
-    <void method="set">
-     <object idref="Student2"/>
-     <string>Emanuel</string>
-    </void>
-   </void>
-   <void class="Student" method="getField">
-    <string>grupa</string>
-    <void method="set">
-     <object idref="Student2"/>
+     <object idref="Student0"/>
      <int>2</int>
     </void>
    </void>
-   <void class="Student" method="getField">
-    <string>an</string>
-    <void method="set">
-     <object idref="Student2"/>
-     <int>4</int>
-    </void>
-   </void>
   </object>
-  <string>Stoian</string>
+  <string>Grigorescu</string>
  </void>
 </void>
 <void class="Curs" id="Field0" method="getField">
  <string>studenti</string>
  <void id="HashSet0" method="get">
-  <object idref="Curs8"/>
+  <object idref="Curs1"/>
+  <void method="add">
+   <object class="Student" id="Student1">
+    <void class="Student" method="getField">
+     <string>nume</string>
+     <void method="set">
+      <object idref="Student1"/>
+      <string>Cucu</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>prenume</string>
+     <void method="set">
+      <object idref="Student1"/>
+      <string>Ioana</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>grupa</string>
+     <void method="set">
+      <object idref="Student1"/>
+      <int>3</int>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>an</string>
+     <void method="set">
+      <object idref="Student1"/>
+      <int>4</int>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Student" id="Student2">
+    <void class="Student" method="getField">
+     <string>nume</string>
+     <void method="set">
+      <object idref="Student2"/>
+      <string>Iorga</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>prenume</string>
+     <void method="set">
+      <object idref="Student2"/>
+      <string>Bianca</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>grupa</string>
+     <void method="set">
+      <object idref="Student2"/>
+      <int>1</int>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>an</string>
+     <void method="set">
+      <object idref="Student2"/>
+      <int>4</int>
+     </void>
+    </void>
+   </object>
+  </void>
   <void method="add">
    <object class="Student" id="Student3">
     <void class="Student" method="getField">
      <string>nume</string>
      <void method="set">
       <object idref="Student3"/>
-      <string>Popa</string>
+      <string>Gribincea</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student3"/>
-      <string>Ana-Maria</string>
+      <string>Valentina</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>grupa</string>
      <void method="set">
       <object idref="Student3"/>
-      <int>2</int>
+      <int>4</int>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>an</string>
      <void method="set">
       <object idref="Student3"/>
-      <int>2</int>
+      <int>4</int>
      </void>
     </void>
    </object>
   </void>
-  <void method="add">
+ </void>
+</void>
+<void idref="HashSet0"/>
+<void class="Curs" id="Field1" method="getField">
+ <string>note</string>
+ <void id="HashMap0" method="get">
+  <object idref="Curs6"/>
+  <void method="put">
    <object class="Student" id="Student4">
     <void class="Student" method="getField">
      <string>nume</string>
      <void method="set">
       <object idref="Student4"/>
-      <string>Istudor</string>
+      <string>Maracineanu</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student4"/>
-      <string>Cristian</string>
+      <string>Constantin</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>grupa</string>
      <void method="set">
       <object idref="Student4"/>
-      <int>2</int>
+      <int>4</int>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>an</string>
      <void method="set">
       <object idref="Student4"/>
-      <int>2</int>
+      <int>1</int>
      </void>
     </void>
    </object>
+   <int>0</int>
   </void>
-  <void method="add">
+  <void method="put">
    <object class="Student" id="Student5">
     <void class="Student" method="getField">
      <string>nume</string>
      <void method="set">
       <object idref="Student5"/>
-      <string>Grigorescu</string>
+      <string>Puia</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student5"/>
-      <string>Stefan</string>
+      <string>Madalina</string>
      </void>
     </void>
     <void class="Student" method="getField">
@@ -487,71 +501,87 @@
      <string>an</string>
      <void method="set">
       <object idref="Student5"/>
-      <int>2</int>
+      <int>1</int>
      </void>
     </void>
    </object>
+   <int>0</int>
   </void>
-  <void method="add">
+ </void>
+</void>
+<void idref="HashMap0"/>
+<void class="Curs" id="Field2" method="getField">
+ <string>note</string>
+ <void id="HashMap1" method="get">
+  <object idref="Curs7"/>
+  <void method="put">
    <object class="Student" id="Student6">
     <void class="Student" method="getField">
      <string>nume</string>
      <void method="set">
       <object idref="Student6"/>
-      <string>Coca</string>
+      <string>Rusu</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student6"/>
-      <string>Paul</string>
+      <string>Victor</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>grupa</string>
      <void method="set">
       <object idref="Student6"/>
-      <int>2</int>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>an</string>
-     <void method="set">
-      <object idref="Student6"/>
-      <int>2</int>
-     </void>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="Student" id="Student7">
-    <void class="Student" method="getField">
-     <string>nume</string>
-     <void method="set">
-      <object idref="Student7"/>
-      <string>Bruma</string>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>prenume</string>
-     <void method="set">
-      <object idref="Student7"/>
-      <string>Daniel</string>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>grupa</string>
-     <void method="set">
-      <object idref="Student7"/>
       <int>4</int>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>an</string>
      <void method="set">
+      <object idref="Student6"/>
+      <int>3</int>
+     </void>
+    </void>
+   </object>
+   <int>0</int>
+  </void>
+ </void>
+</void>
+<void idref="HashMap1"/>
+<void class="Curs" id="Field3" method="getField">
+ <string>studenti</string>
+ <void id="HashSet1" method="get">
+  <object idref="Curs3"/>
+  <void method="add">
+   <object class="Student" id="Student7">
+    <void class="Student" method="getField">
+     <string>nume</string>
+     <void method="set">
+      <object idref="Student7"/>
+      <string>Visan</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>prenume</string>
+     <void method="set">
+      <object idref="Student7"/>
+      <string>Marian</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>grupa</string>
+     <void method="set">
       <object idref="Student7"/>
       <int>2</int>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>an</string>
+     <void method="set">
+      <object idref="Student7"/>
+      <int>4</int>
      </void>
     </void>
    </object>
@@ -562,14 +592,14 @@
      <string>nume</string>
      <void method="set">
       <object idref="Student8"/>
-      <string>Milea</string>
+      <string>Spunei</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student8"/>
-      <string>Daniel</string>
+      <string>Razvan</string>
      </void>
     </void>
     <void class="Student" method="getField">
@@ -583,7 +613,7 @@
      <string>an</string>
      <void method="set">
       <object idref="Student8"/>
-      <int>2</int>
+      <int>4</int>
      </void>
     </void>
    </object>
@@ -594,28 +624,28 @@
      <string>nume</string>
      <void method="set">
       <object idref="Student9"/>
-      <string>Vajaiac</string>
+      <string>Stoian</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student9"/>
-      <string>Marius</string>
+      <string>Emanuel</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>grupa</string>
      <void method="set">
       <object idref="Student9"/>
-      <int>1</int>
+      <int>2</int>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>an</string>
      <void method="set">
       <object idref="Student9"/>
-      <int>2</int>
+      <int>4</int>
      </void>
     </void>
    </object>
@@ -626,82 +656,98 @@
      <string>nume</string>
      <void method="set">
       <object idref="Student10"/>
-      <string>Dragomir</string>
+      <string>Silitra</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student10"/>
-      <string>Sergiu</string>
+      <string>Florin</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>grupa</string>
      <void method="set">
       <object idref="Student10"/>
-      <int>2</int>
+      <int>4</int>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>an</string>
      <void method="set">
       <object idref="Student10"/>
+      <int>4</int>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object idref="Student3"/>
+  </void>
+ </void>
+</void>
+<void idref="HashSet1"/>
+<void class="Curs" id="Field4" method="getField">
+ <string>studenti</string>
+ <void id="HashSet2" method="get">
+  <object idref="Curs7"/>
+  <void method="add">
+   <object idref="Student6"/>
+  </void>
+ </void>
+</void>
+<void idref="HashSet2"/>
+<void class="Curs" id="Field5" method="getField">
+ <string>studenti</string>
+ <void id="HashSet3" method="get">
+  <object idref="Curs2"/>
+  <void method="add">
+   <object class="Student" id="Student11">
+    <void class="Student" method="getField">
+     <string>nume</string>
+     <void method="set">
+      <object idref="Student11"/>
+      <string>Coca</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>prenume</string>
+     <void method="set">
+      <object idref="Student11"/>
+      <string>Paul</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>grupa</string>
+     <void method="set">
+      <object idref="Student11"/>
+      <int>2</int>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>an</string>
+     <void method="set">
+      <object idref="Student11"/>
       <int>2</int>
      </void>
     </void>
    </object>
   </void>
- </void>
-</void>
-<void idref="HashSet0"/>
-<void class="Student" method="getField">
- <string>nume</string>
- <void method="set">
-  <object class="Student" id="Student11">
-   <void class="Student" method="getField">
-    <string>prenume</string>
-    <void method="set">
-     <object idref="Student11"/>
-     <string>Florin</string>
-    </void>
-   </void>
-   <void class="Student" method="getField">
-    <string>grupa</string>
-    <void method="set">
-     <object idref="Student11"/>
-     <int>4</int>
-    </void>
-   </void>
-   <void class="Student" method="getField">
-    <string>an</string>
-    <void method="set">
-     <object idref="Student11"/>
-     <int>4</int>
-    </void>
-   </void>
-  </object>
-  <string>Silitra</string>
- </void>
-</void>
-<void class="Curs" id="Field1" method="getField">
- <string>studenti</string>
- <void id="HashSet1" method="get">
-  <object idref="Curs7"/>
   <void method="add">
    <object class="Student" id="Student12">
     <void class="Student" method="getField">
      <string>nume</string>
      <void method="set">
       <object idref="Student12"/>
-      <string>Rusu</string>
+      <string>Bruma</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student12"/>
-      <string>Victor</string>
+      <string>Daniel</string>
      </void>
     </void>
     <void class="Student" method="getField">
@@ -715,78 +761,53 @@
      <string>an</string>
      <void method="set">
       <object idref="Student12"/>
-      <int>3</int>
+      <int>2</int>
      </void>
     </void>
    </object>
   </void>
  </void>
 </void>
-<void idref="HashSet1"/>
-<void class="Curs" id="Field2" method="getField">
+<void idref="HashSet3"/>
+<void class="Curs" id="Field6" method="getField">
  <string>studenti</string>
- <void id="HashSet2" method="get">
-  <object idref="Curs5"/>
+ <void id="HashSet4" method="get">
+  <object idref="Curs0"/>
   <void method="add">
-   <object idref="Student4"/>
-  </void>
-  <void method="add">
-   <object idref="Student6"/>
-  </void>
-  <void method="add">
-   <object idref="Student10"/>
+   <object class="Student" id="Student13">
+    <void class="Student" method="getField">
+     <string>nume</string>
+     <void method="set">
+      <object idref="Student13"/>
+      <string>Oprea</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>prenume</string>
+     <void method="set">
+      <object idref="Student13"/>
+      <string>Ionut</string>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>grupa</string>
+     <void method="set">
+      <object idref="Student13"/>
+      <int>2</int>
+     </void>
+    </void>
+    <void class="Student" method="getField">
+     <string>an</string>
+     <void method="set">
+      <object idref="Student13"/>
+      <int>1</int>
+     </void>
+    </void>
+   </object>
   </void>
  </void>
 </void>
-<void idref="HashSet2"/>
-<void class="Student" method="getField">
- <string>nume</string>
- <void method="set">
-  <object class="Student" id="Student13">
-   <void class="Student" method="getField">
-    <string>prenume</string>
-    <void method="set">
-     <object idref="Student13"/>
-     <string>Florinela</string>
-    </void>
-   </void>
-   <void class="Student" method="getField">
-    <string>grupa</string>
-    <void method="set">
-     <object idref="Student13"/>
-     <int>2</int>
-    </void>
-   </void>
-   <void class="Student" method="getField">
-    <string>an</string>
-    <void method="set">
-     <object idref="Student13"/>
-     <int>4</int>
-    </void>
-   </void>
-  </object>
-  <string>Cristea</string>
- </void>
-</void>
-<void class="Curs" id="Field3" method="getField">
- <string>note</string>
- <void id="HashMap0" method="get">
-  <object idref="Curs5"/>
-  <void method="put">
-   <object idref="Student4"/>
-   <int>0</int>
-  </void>
-  <void method="put">
-   <object idref="Student6"/>
-   <int>0</int>
-  </void>
-  <void method="put">
-   <object idref="Student10"/>
-   <int>0</int>
-  </void>
- </void>
-</void>
-<void idref="HashMap0"/>
+<void idref="HashSet4"/>
 <void class="Student" method="getField">
  <string>nume</string>
  <void method="set">
@@ -795,120 +816,146 @@
     <string>prenume</string>
     <void method="set">
      <object idref="Student14"/>
-     <string>Ioana</string>
+     <string>Cristian</string>
     </void>
    </void>
    <void class="Student" method="getField">
     <string>grupa</string>
     <void method="set">
      <object idref="Student14"/>
-     <int>3</int>
+     <int>2</int>
     </void>
    </void>
    <void class="Student" method="getField">
     <string>an</string>
     <void method="set">
      <object idref="Student14"/>
+     <int>2</int>
+    </void>
+   </void>
+  </object>
+  <string>Istudor</string>
+ </void>
+</void>
+<void class="Curs" id="Field7" method="getField">
+ <string>note</string>
+ <void id="HashMap2" method="get">
+  <object idref="Curs1"/>
+  <void method="put">
+   <object idref="Student1"/>
+   <int>0</int>
+  </void>
+  <void method="put">
+   <object idref="Student2"/>
+   <int>0</int>
+  </void>
+  <void method="put">
+   <object idref="Student3"/>
+   <int>0</int>
+  </void>
+ </void>
+</void>
+<void idref="HashMap2"/>
+<void class="Student" method="getField">
+ <string>nume</string>
+ <void method="set">
+  <object class="Student" id="Student15">
+   <void class="Student" method="getField">
+    <string>prenume</string>
+    <void method="set">
+     <object idref="Student15"/>
+     <string>Florinela</string>
+    </void>
+   </void>
+   <void class="Student" method="getField">
+    <string>grupa</string>
+    <void method="set">
+     <object idref="Student15"/>
+     <int>2</int>
+    </void>
+   </void>
+   <void class="Student" method="getField">
+    <string>an</string>
+    <void method="set">
+     <object idref="Student15"/>
      <int>4</int>
     </void>
    </void>
   </object>
-  <string>Cucu</string>
+  <string>Cristea</string>
  </void>
 </void>
-<void class="Curs" id="Field4" method="getField">
- <string>note</string>
- <void id="HashMap1" method="get">
+<void class="Curs" id="Field8" method="getField">
+ <string>studenti</string>
+ <void id="HashSet5" method="get">
   <object idref="Curs6"/>
-  <void method="put">
-   <object class="Student" id="Student15">
-    <void class="Student" method="getField">
-     <string>nume</string>
-     <void method="set">
-      <object idref="Student15"/>
-      <string>Maracineanu</string>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>prenume</string>
-     <void method="set">
-      <object idref="Student15"/>
-      <string>Constantin</string>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>grupa</string>
-     <void method="set">
-      <object idref="Student15"/>
-      <int>4</int>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>an</string>
-     <void method="set">
-      <object idref="Student15"/>
-      <int>1</int>
-     </void>
-    </void>
-   </object>
-   <int>0</int>
+  <void method="add">
+   <object idref="Student4"/>
   </void>
-  <void method="put">
-   <object class="Student" id="Student16">
-    <void class="Student" method="getField">
-     <string>nume</string>
-     <void method="set">
-      <object idref="Student16"/>
-      <string>Puia</string>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>prenume</string>
-     <void method="set">
-      <object idref="Student16"/>
-      <string>Madalina</string>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>grupa</string>
-     <void method="set">
-      <object idref="Student16"/>
-      <int>1</int>
-     </void>
-    </void>
-    <void class="Student" method="getField">
-     <string>an</string>
-     <void method="set">
-      <object idref="Student16"/>
-      <int>1</int>
-     </void>
-    </void>
-   </object>
-   <int>0</int>
+  <void method="add">
+   <object idref="Student5"/>
   </void>
  </void>
 </void>
-<void idref="HashMap1"/>
-<void class="Curs" id="Field5" method="getField">
+<void idref="HashSet5"/>
+<void class="Curs" id="Field9" method="getField">
  <string>note</string>
- <void id="HashMap2" method="get">
-  <object idref="Curs4"/>
+ <void id="HashMap3" method="get">
+  <object idref="Curs0"/>
   <void method="put">
    <object idref="Student13"/>
    <int>0</int>
   </void>
  </void>
 </void>
-<void idref="HashMap2"/>
-<void class="Curs" id="Field6" method="getField">
+<void idref="HashMap3"/>
+<void class="Student" method="getField">
+ <string>nume</string>
+ <void method="set">
+  <object class="Student" id="Student16">
+   <void class="Student" method="getField">
+    <string>prenume</string>
+    <void method="set">
+     <object idref="Student16"/>
+     <string>Sergiu</string>
+    </void>
+   </void>
+   <void class="Student" method="getField">
+    <string>grupa</string>
+    <void method="set">
+     <object idref="Student16"/>
+     <int>2</int>
+    </void>
+   </void>
+   <void class="Student" method="getField">
+    <string>an</string>
+    <void method="set">
+     <object idref="Student16"/>
+     <int>2</int>
+    </void>
+   </void>
+  </object>
+  <string>Dragomir</string>
+ </void>
+</void>
+<void class="Curs" id="Field10" method="getField">
  <string>studenti</string>
- <void id="HashSet3" method="get">
-  <object idref="Curs1"/>
+ <void id="HashSet6" method="get">
+  <object idref="Curs8"/>
+  <void method="add">
+   <object idref="Student16"/>
+  </void>
   <void method="add">
    <object idref="Student14"/>
   </void>
   <void method="add">
-   <object idref="Student1"/>
+   <object idref="Student0"/>
+  </void>
+  <void method="add">
+   <object idref="Student11"/>
+  </void>
+  <void method="add">
+   <object idref="Student12"/>
   </void>
   <void method="add">
    <object class="Student" id="Student17">
@@ -916,41 +963,31 @@
      <string>nume</string>
      <void method="set">
       <object idref="Student17"/>
-      <string>Gribincea</string>
+      <string>Milea</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student17"/>
-      <string>Valentina</string>
+      <string>Daniel</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>grupa</string>
      <void method="set">
       <object idref="Student17"/>
-      <int>4</int>
+      <int>3</int>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>an</string>
      <void method="set">
       <object idref="Student17"/>
-      <int>4</int>
+      <int>2</int>
      </void>
     </void>
    </object>
-  </void>
- </void>
-</void>
-<void idref="HashSet3"/>
-<void class="Curs" id="Field7" method="getField">
- <string>studenti</string>
- <void id="HashSet4" method="get">
-  <object idref="Curs3"/>
-  <void method="add">
-   <object idref="Student0"/>
   </void>
   <void method="add">
    <object class="Student" id="Student18">
@@ -958,62 +995,46 @@
      <string>nume</string>
      <void method="set">
       <object idref="Student18"/>
-      <string>Spunei</string>
+      <string>Vajaiac</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student18"/>
-      <string>Razvan</string>
+      <string>Marius</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>grupa</string>
      <void method="set">
       <object idref="Student18"/>
-      <int>3</int>
+      <int>1</int>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>an</string>
      <void method="set">
       <object idref="Student18"/>
-      <int>4</int>
+      <int>2</int>
      </void>
     </void>
    </object>
   </void>
-  <void method="add">
-   <object idref="Student2"/>
-  </void>
-  <void method="add">
-   <object idref="Student11"/>
-  </void>
-  <void method="add">
-   <object idref="Student17"/>
-  </void>
- </void>
-</void>
-<void idref="HashSet4"/>
-<void class="Curs" id="Field8" method="getField">
- <string>studenti</string>
- <void id="HashSet5" method="get">
-  <object idref="Curs0"/>
   <void method="add">
    <object class="Student" id="Student19">
     <void class="Student" method="getField">
      <string>nume</string>
      <void method="set">
       <object idref="Student19"/>
-      <string>Oprea</string>
+      <string>Popa</string>
      </void>
     </void>
     <void class="Student" method="getField">
      <string>prenume</string>
      <void method="set">
       <object idref="Student19"/>
-      <string>Ionut</string>
+      <string>Ana-Maria</string>
      </void>
     </void>
     <void class="Student" method="getField">
@@ -1027,34 +1048,28 @@
      <string>an</string>
      <void method="set">
       <object idref="Student19"/>
-      <int>1</int>
+      <int>2</int>
      </void>
     </void>
    </object>
   </void>
  </void>
 </void>
-<void idref="HashSet5"/>
-<void class="Curs" id="Field9" method="getField">
+<void idref="HashSet6"/>
+<void class="Curs" id="Field11" method="getField">
+ <string>studenti</string>
+ <void id="HashSet7" method="get">
+  <object idref="Curs4"/>
+  <void method="add">
+   <object idref="Student15"/>
+  </void>
+ </void>
+</void>
+<void idref="HashSet7"/>
+<void class="Curs" id="Field12" method="getField">
  <string>note</string>
- <void id="HashMap3" method="get">
-  <object idref="Curs8"/>
-  <void method="put">
-   <object idref="Student3"/>
-   <int>6</int>
-  </void>
-  <void method="put">
-   <object idref="Student4"/>
-   <int>0</int>
-  </void>
-  <void method="put">
-   <object idref="Student5"/>
-   <int>0</int>
-  </void>
-  <void method="put">
-   <object idref="Student6"/>
-   <int>0</int>
-  </void>
+ <void id="HashMap4" method="get">
+  <object idref="Curs3"/>
   <void method="put">
    <object idref="Student7"/>
    <int>0</int>
@@ -1065,100 +1080,59 @@
   </void>
   <void method="put">
    <object idref="Student9"/>
-   <int>0</int>
+   <int>6</int>
   </void>
   <void method="put">
    <object idref="Student10"/>
    <int>7</int>
   </void>
- </void>
-</void>
-<void idref="HashMap3"/>
-<void class="Curs" id="Field10" method="getField">
- <string>studenti</string>
- <void id="HashSet6" method="get">
-  <object idref="Curs6"/>
-  <void method="add">
-   <object idref="Student15"/>
-  </void>
-  <void method="add">
-   <object idref="Student16"/>
-  </void>
- </void>
-</void>
-<void idref="HashSet6"/>
-<void class="Curs" id="Field11" method="getField">
- <string>note</string>
- <void id="HashMap4" method="get">
-  <object idref="Curs7"/>
   <void method="put">
-   <object idref="Student12"/>
+   <object idref="Student3"/>
    <int>0</int>
   </void>
  </void>
 </void>
 <void idref="HashMap4"/>
-<void class="Curs" id="Field12" method="getField">
+<void class="Curs" id="Field13" method="getField">
  <string>note</string>
  <void id="HashMap5" method="get">
-  <object idref="Curs0"/>
+  <object idref="Curs4"/>
   <void method="put">
-   <object idref="Student19"/>
+   <object idref="Student15"/>
    <int>0</int>
   </void>
  </void>
 </void>
 <void idref="HashMap5"/>
-<void class="Curs" id="Field13" method="getField">
+<void class="Curs" id="Field14" method="getField">
  <string>note</string>
  <void id="HashMap6" method="get">
-  <object idref="Curs3"/>
+  <object idref="Curs5"/>
   <void method="put">
-   <object idref="Student0"/>
+   <object idref="Student14"/>
    <int>0</int>
-  </void>
-  <void method="put">
-   <object idref="Student18"/>
-   <int>0</int>
-  </void>
-  <void method="put">
-   <object idref="Student2"/>
-   <int>6</int>
   </void>
   <void method="put">
    <object idref="Student11"/>
-   <int>7</int>
+   <int>0</int>
   </void>
   <void method="put">
-   <object idref="Student17"/>
+   <object idref="Student16"/>
    <int>0</int>
   </void>
  </void>
 </void>
 <void idref="HashMap6"/>
-<void class="Curs" id="Field14" method="getField">
- <string>studenti</string>
- <void id="HashSet7" method="get">
-  <object idref="Curs2"/>
-  <void method="add">
-   <object idref="Student7"/>
-  </void>
-  <void method="add">
-   <object idref="Student6"/>
-  </void>
- </void>
-</void>
-<void idref="HashSet7"/>
 <void class="Curs" id="Field15" method="getField">
  <string>note</string>
  <void id="HashMap7" method="get">
   <object idref="Curs2"/>
   <void method="put">
-   <object idref="Student7"/>
+   <object idref="Student11"/>
    <int>0</int>
   </void>
   <void method="put">
-   <object idref="Student6"/>
+   <object idref="Student12"/>
    <int>0</int>
   </void>
  </void>
@@ -1167,9 +1141,15 @@
 <void class="Curs" id="Field16" method="getField">
  <string>studenti</string>
  <void id="HashSet8" method="get">
-  <object idref="Curs4"/>
+  <object idref="Curs5"/>
   <void method="add">
-   <object idref="Student13"/>
+   <object idref="Student14"/>
+  </void>
+  <void method="add">
+   <object idref="Student11"/>
+  </void>
+  <void method="add">
+   <object idref="Student16"/>
   </void>
  </void>
 </void>
@@ -1177,18 +1157,38 @@
 <void class="Curs" id="Field17" method="getField">
  <string>note</string>
  <void id="HashMap8" method="get">
-  <object idref="Curs1"/>
+  <object idref="Curs8"/>
+  <void method="put">
+   <object idref="Student16"/>
+   <int>7</int>
+  </void>
   <void method="put">
    <object idref="Student14"/>
+   <int>6</int>
+  </void>
+  <void method="put">
+   <object idref="Student0"/>
    <int>0</int>
   </void>
   <void method="put">
-   <object idref="Student1"/>
+   <object idref="Student11"/>
+   <int>0</int>
+  </void>
+  <void method="put">
+   <object idref="Student12"/>
    <int>0</int>
   </void>
   <void method="put">
    <object idref="Student17"/>
    <int>0</int>
+  </void>
+  <void method="put">
+   <object idref="Student18"/>
+   <int>0</int>
+  </void>
+  <void method="put">
+   <object idref="Student19"/>
+   <int>6</int>
   </void>
  </void>
 </void>

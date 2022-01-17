@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class StudentStrategy implements MenuStrategy{
 
@@ -51,6 +52,18 @@ public class StudentStrategy implements MenuStrategy{
                 System.out.println(counter + ". " + s.split(":")[0] + ": " + s.split(":")[1]);
                 counter++;
             }
+        }
+        System.out.println(counter + ". " + "Exit Program");
+        try (Scanner cin = new Scanner(System.in)){
+            int t = cin.nextInt();
+            if(t == counter)
+            {
+                System.out.println("\nProcess finished with exit code 0");
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
 }

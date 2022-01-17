@@ -15,7 +15,9 @@ enum DISPLAY_TYPE  {
 class Main {
     public static void main(String[] args) {
         Settings.initApplication();
-        Thread GUIThread = new Thread(new ConsoleThread());
+        Thread ConsoleThread = new Thread(new ConsoleThread());
+        Thread GUIThread = new Thread(new GUIThread());
+        ConsoleThread.start();
         GUIThread.start();
     }
 }
