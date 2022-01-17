@@ -19,6 +19,23 @@ public class ManagerCursuri{
         return this.cursuri;
     }
 
+    public ArrayList<String> ShowCoursesOfTeacher(Profesor profesor)
+    {
+        int counter = 1;
+        ArrayList<String> list = new ArrayList<String>();
+        for(Curs c : cursuri)
+        {
+            if(c.prof.equals(profesor))
+            {
+                System.out.println(counter + ". " + c.getNume());
+                list.add(c.getNume());
+                counter++;
+            }
+        }
+        System.out.println(counter + ". " + "Exit Program");
+        return list;
+    }
+
     public Curs[] getCursuriArray() {
         Curs[] c = new Curs[cursuri.size()];
         c = cursuri.toArray(c);
@@ -146,13 +163,23 @@ public class ManagerCursuri{
     {
         float mean = 0;
         int nr = 0;
+        boolean ok = true;
         for(Curs curs : cursuri)
         {
             if(curs.SearchStudent(student))
             {
                 mean += curs.note.get(student) != null ? curs.note.get(student) : 0;
+                if(curs.note.get(student) == null)
+                {
+                    ok = false;
+                    break;
+                }
                 nr++;
             }
+        }
+        if(ok == false)
+        {
+            return 0;
         }
         if(mean == 0)
             return 0;
@@ -196,7 +223,7 @@ public class ManagerCursuri{
     }
 
     //Afiseaza stundetii de la un anumit curs specificat ca parametru
-    public void StudentiCurs(Curs curs) {
+    public ArrayList<String> StudentiCurs(Curs curs) {
         int index = -1, pos = 0, ok = 0;
         for (Curs c : cursuri) {
             index++;
@@ -211,7 +238,7 @@ public class ManagerCursuri{
             System.exit(0);
         }
 
-        cursuri.get(pos).ShowStudents();
+        return cursuri.get(pos).ShowStudents();
     }
     //Sorteaza cursurile dupa nume
     public void SorteazaDupaNume()

@@ -8,6 +8,7 @@ public class RegisterGUI {
     public RegisterGUI(JFrame owner)
     {
         this.owner = owner;
+        owner.setResizable(false);
         btnRegister.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -13,6 +13,10 @@ public class Student {
 
     public Student() { }
 
+    public Student(String nume) {
+        this.nume = nume;
+    }
+
     public Student(String nume, String prenume)
     {
         this.nume = nume;

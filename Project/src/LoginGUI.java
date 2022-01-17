@@ -7,6 +7,7 @@ public class LoginGUI {
     public LoginGUI(JFrame owner)
     {
         this.owner = owner;
+        owner.setResizable(false);
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
