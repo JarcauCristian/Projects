@@ -1,0 +1,30 @@
+#fPane{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-border-width: 4;
+    -fx-border-color: lightgrey;
+}
+
+#sPane{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-border-width: 4;
+    -fx-border-color: lightgrey;
+}
+
+#tPane{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-border-width: 4;
+    -fx-border-color: lightgrey;
+}
+
+.label{
+    -fx-text-fill: white;
+    -fx-border-width: 2;
+    -fx-border-color: lightgrey;
+}
+
+.vbox{
+    -fx-background-color: black;
+}
