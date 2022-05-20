@@ -1,4 +1,4 @@
-# laborator_java
+# Projects
 Here are my project that I've done along the years.
 
 Project: 
