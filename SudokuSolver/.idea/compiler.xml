@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="SudokuSolver" options="--add-exports java.datatransfer/java.awt=com.example.sudokusolver" />
+      <module name="SudokuSolver" options="" />
     </option>
   </component>
 </project>
