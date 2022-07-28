@@ -9,14 +9,14 @@ public class Main {
 
         try
         {
-            Scanner scanner = new Scanner(new File("E:\\Facultate\\Siemens\\Java\\tema_java\\vehicles.txt"));
+            Scanner scanner = new Scanner(new File("vehicles.txt"));
             while (scanner.hasNextLine())
             {
                 String line = scanner.nextLine();
                 rental.setVehicles(new Vehicle(line.split(",")[0],line.split(",")[1].replace(" ", ""),line.split(",")[2].replace(" ", ""),Integer.parseInt(line.split(",")[3].replace(" ", "")),line.split(",")[4].replace(" ", "")));
             }
             scanner.close();
-            scanner = new Scanner(new File("E:\\Facultate\\Siemens\\Java\\tema_java\\persoane.txt"));
+            scanner = new Scanner(new File("persoane.txt"));
             while (scanner.hasNextLine())
             {
                 String line = scanner.nextLine();

@@ -1,16 +1,31 @@
-import java.util.Date;
 import java.util.Objects;
 
+enum Type{
+    SCOOTER,
+    RULOTA,
+    MASINA
+};
 public class Vehicle {
     private String registrationNumber;
-    private String type;
+    private Type type;
     private String brand;
     private String color;
     private Integer manufactureYear;
 
     public Vehicle(String registrationNumber, String type, String brand, Integer manufactureYear, String color) {
         this.registrationNumber = registrationNumber;
-        this.type = type;
+        switch (type)
+        {
+            case "SCOOTER":
+                this.type = Type.SCOOTER;
+                break;
+            case "RULOTA":
+                this.type = Type.RULOTA;
+                break;
+            case "MASINA":
+                this.type = Type.MASINA;
+                break;
+        }
         this.brand = brand;
         this.color = color;
         this.manufactureYear = manufactureYear;
@@ -21,14 +36,14 @@ public class Vehicle {
         this.color = "";
         this.manufactureYear = 0;
         this.registrationNumber = "";
-        this.type = "";
     }
 
     public String getRegistrationNumber() {
         return registrationNumber;
     }
 
-    public String getType() {
+    public Type getType()
+    {
         return type;
     }
 
@@ -60,11 +75,11 @@ public class Vehicle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vehicle vehicle = (Vehicle) o;
-        return registrationNumber.equals(vehicle.registrationNumber) && type.equals(vehicle.type) && brand.equals(vehicle.brand) && color.equals(vehicle.color) && manufactureYear.equals(vehicle.manufactureYear);
+        return registrationNumber.equals(vehicle.registrationNumber) && brand.equals(vehicle.brand) && color.equals(vehicle.color) && manufactureYear.equals(vehicle.manufactureYear);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(registrationNumber, type, brand, color, manufactureYear);
+        return Objects.hash(registrationNumber, brand, color, manufactureYear);
     }
 }
