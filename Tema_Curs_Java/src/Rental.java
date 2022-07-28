@@ -47,7 +47,7 @@ public class Rental implements VehicleMethods{
             while (scanner.hasNextLine())
             {
                 String line = scanner.nextLine();
-                setPersons(new Person(Long.parseLong(line.split(",")[0]),line.split(",")[1].replace(" ", ""),line.split(",")[2].replace(" ", ""),line.split(",")[3].replace(" ", ""),Integer.parseInt(line.split(",")[4].replace(" ", ""))));
+                setPersons(new Person(line.split(",")[0],line.split(",")[1].replace(" ", ""),line.split(",")[2].replace(" ", ""),line.split(",")[3].replace(" ", ""),Integer.parseInt(line.split(",")[4].replace(" ", ""))));
             }
         }
         catch (FileNotFoundException e)
