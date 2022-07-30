@@ -25,5 +25,11 @@ public class Main {
         rental.viewVehicleOrderByManufactureYear();
         System.out.println();
         rental.searchAVehicleByType("RULOTA");
+
+        System.out.println();
+        if(DBClass.connection())
+        {
+            System.out.println("Connection succesful");
+        }
     }
 }
