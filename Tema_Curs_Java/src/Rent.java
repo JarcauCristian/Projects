@@ -1,4 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.*;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class Rent implements RentalMethods{
     private int id;
@@ -87,5 +92,60 @@ public class Rent implements RentalMethods{
     @Override
     public void viewTheRentedVehiclesOfASpecificUser(Person person) {
 
+    }
+
+    public void DBConnect() throws SQLException {
+        if (DBClass.connection()) {
+            Statement statement = DBClass.conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from rentaldata");
+            while (resultSet.next()) {
+                System.out.println(resultSet.getDate("StartDate"));
+            }
+        }
+    }
+
+    public void DBInsertInto() throws SQLException
+    {
+        if (DBClass.connection())
+        {
+            Statement statement = DBClass.conn.createStatement();
+            String sql_statement = "insert into rentaldata(startdate,enddate,kilometers,idClients,idVehicles) ";
+            try {
+                Scanner cin = new Scanner(new File("inchirieri.txt"));
+                Rental rental = new Rental();
+                rental.readInputFiles("vehicles.txt", "persoane.txt");
+                while (cin.hasNextLine())
+                {
+                    String line = cin.nextLine();
+                    int indexPersons = 0;
+                    int indexVehicle = 0;
+                    for (int i = 0; i < rental.getPersons().size(); i++)
+                    {
+                        if (rental.getPersons().get(i).getCNP().equals(line.split(",")[3].replace(" ","")))
+                        {
+                            indexPersons = i + 4;
+                            break;
+                        }
+                    }
+                    for (int i = 0; i < rental.getVehicles().size(); i++)
+                    {
+                        if (rental.getVehicles().get(i).getRegistrationNumber().equals(line.split(",")[4].replace(" ","")))
+                        {
+                            indexVehicle = i + 1;
+                            break;
+                        }
+                    }
+                    String startdate = line.split(",")[0].replace(" ", "");
+                    String enddate = line.split(",")[1].replace(" ", "");
+                    String kilometers = line.split(",")[2].replace(" ", "");
+
+                    statement.executeUpdate(sql_statement + "values('" + startdate + "','" + enddate + "','" + kilometers + "','" + indexPersons + "','" + indexVehicle + "');");
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
 }
