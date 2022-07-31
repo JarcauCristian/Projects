@@ -79,7 +79,34 @@ public class Rent implements RentalMethods{
 
     @Override
     public void showHistoryOfRentalVehiclesAndTheirClient() {
+        if (DBClass.connection())
+        {
+            try {
+                CallableStatement callable = DBClass.conn.prepareCall("{call sp_getAllVehiclesAndTheirUsers()}");
+                callable.execute();
+                ResultSet resultSet = callable.getResultSet();
 
+                System.out.printf("%-10s | %-10s | %-7s | %-9s | %-7s | %-10s | %-11s | %-4s | %-13s | %-15s | %-15s | %-10s | %-6s | %-4s", "Start Date", "End Date", "Kilometers", "RegistNr", "Type", "Brand", "Color", "MaYe", "CNP", "First Name", "Last Name", "Birth Day", "Gender", "DVLN");
+                System.out.println();
+                System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                while (resultSet.next())
+                {
+                    System.out.printf("%-10s | %-10s | %-7s | %-9s | %-7s | %-10s | %-11s | %-4s | %-13s | %-15s | %-15s | %-10s | %-6s | %-4s" ,resultSet.getDate("startdate"), resultSet.getDate("enddate"), resultSet.getDouble("kilometers") , resultSet.getString("registationnumber"),
+                            resultSet.getString("type"), resultSet.getString("brand"), resultSet.getString("color"), resultSet.getString("manufactureryear"), resultSet.getString("CNP"),
+                            resultSet.getString("firstname"), resultSet.getString("lastname"), resultSet.getDate("dateofbirth"), resultSet.getString("gender"), resultSet.getInt("driverlincese"));
+                    System.out.println();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            finally {
+                try {
+                    DBClass.conn.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 
     @Override
@@ -115,24 +142,51 @@ public class Rent implements RentalMethods{
                     throw new RuntimeException(e);
                 }
             }
+            try {
+                DBClass.conn.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
         return false;
     }
 
     @Override
     public void viewTheRentedVehiclesOfASpecificUser(Person person) {
-
-    }
-
-    public void DBConnect() throws SQLException {
-        if (DBClass.connection()) {
-            Statement statement = DBClass.conn.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from rentaldata");
-            while (resultSet.next()) {
-                System.out.println(resultSet.getDate("StartDate"));
+        if (DBClass.connection())
+        {
+            try {
+                CallableStatement statement = DBClass.conn.prepareCall("{call sp_getAllTheVehiclesRentedByASpecificUser(?)}");
+                int indexPerson = 0;
+                indexPerson = searchForPerson(person.getCNP());
+                if (indexPerson != 0)
+                {
+                    statement.setInt(1, indexPerson);
+                }
+                statement.execute();
+                ResultSet resultSet = statement.getResultSet();
+                System.out.println("Vehicles rented by: " + person.getFirstName() + " " + person.getLastName());
+                System.out.printf("%-10s | %-10s | %-7s | %-9s | %-7s | %-15s | %-4s", "Start Date", "End date", "Km", "RegistNr", "Type", "Brand", "MNYR");
+                System.out.println();
+                while (resultSet.next())
+                {
+                    System.out.printf("%-10s | %-10s | %-7s | %-9s | %-7s | %-15s | %-4s", resultSet.getDate("startdate"), resultSet.getDate("enddate"), resultSet.getDouble("kilometers"), resultSet.getString("registationnumber"), resultSet.getString("type"), resultSet.getString("brand"), resultSet.getInt("manufactureryear"));
+                    System.out.println();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
+            finally {
+                try {
+                    DBClass.conn.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
         }
     }
+
 
     private int searchForPerson(String personCNP)
     {
