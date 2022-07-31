@@ -1,9 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.*;
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Rent implements RentalMethods{
     private int id;
@@ -86,6 +84,38 @@ public class Rent implements RentalMethods{
 
     @Override
     public boolean rentAVehicle() {
+        if (DBClass.connection())
+        {
+            Statement statement;
+            try {
+                statement = DBClass.conn.createStatement();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            Scanner cin = new Scanner(System.in);
+            System.out.println("Enter the start date of the rental period: ");
+            String startDate = cin.nextLine();
+            System.out.println("Enter the end date of the rental period: ");
+            String endDate = cin.nextLine();
+            System.out.println("Enter the borrower of the car CNP: ");
+            String personCNP = cin.nextLine();
+            System.out.println("Enter the vehicle registration number: ");
+            String vehicleRN = cin.nextLine();
+            int indexPerson =  0;
+            indexPerson = searchForPerson(personCNP);
+            int indexVehicle = 0;
+            indexVehicle = searchForVehicle(vehicleRN);
+
+            if (indexPerson != 0 && indexVehicle != 0)
+            {
+                try {
+                    statement.executeUpdate("insert into RentalData(startdate,enddate,kilometers,idClients,idVehicles) values('" + startDate + "','" + endDate + "'," + '0' + ",'" + indexPerson + "','" + indexVehicle + "');");
+                    return true;
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
         return false;
     }
 
@@ -102,6 +132,38 @@ public class Rent implements RentalMethods{
                 System.out.println(resultSet.getDate("StartDate"));
             }
         }
+    }
+
+    private int searchForPerson(String personCNP)
+    {
+        Rental rental = new Rental();
+        rental.readInputFiles("vehicles.txt", "persoane.txt");
+        int indexPerson = 0;
+        for (int i = 0; i < rental.getPersons().size(); i++)
+        {
+            if (personCNP.equals(rental.getPersons().get(i).getCNP()))
+            {
+                indexPerson = i + 4;
+                break;
+            }
+        }
+        return indexPerson;
+    }
+
+    private int searchForVehicle(String vehicleRN)
+    {
+        Rental rental = new Rental();
+        rental.readInputFiles("vehicles.txt", "persoane.txt");
+        int indexVehicle = 0;
+        for (int i = 0; i < rental.getVehicles().size(); i++)
+        {
+            if (vehicleRN.equals(rental.getVehicles().get(i).getRegistrationNumber()))
+            {
+                indexVehicle = i + 1;
+                break;
+            }
+        }
+        return indexVehicle;
     }
 
     public void DBInsertInto() throws SQLException
